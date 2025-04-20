@@ -9,6 +9,29 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>release-billMind.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>7A4A58422DB51E74003DF711</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7A4A58532DB51E75003DF711</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7A4A585D2DB51E75003DF711</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 	</dict>
 </dict>
 </plist>
