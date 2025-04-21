@@ -6,7 +6,6 @@ struct HomeDashboardView: View {
     @Query(sort: \Bill.date, order: .forward) private var bills: [Bill]
     init() {}
 
-    // MARK: Computed helpers
     private var unpaid: [Bill] { bills.filter { !$0.isPaid } }
     private var unpaidTotal: Double { unpaid.reduce(0) { $0 + $1.amount } }
     private var overdueCount: Int { unpaid.filter(\Bill.isOverdue).count }
@@ -66,7 +65,6 @@ struct HomeDashboardView: View {
     }
 }
 
-// Reusable shadowed rounded‑rect container
 struct CardView<Content: View>: View {
     @ViewBuilder var content: () -> Content
     var body: some View {
