@@ -3,75 +3,138 @@ import Charts
 import SwiftData
 
 struct HomeDashboardView: View {
+    
     @Query(sort: \Bill.date, order: .forward) private var bills: [Bill]
-    init() {}
+    @Query private var txns: [Transaction]
 
-    private var unpaid: [Bill] { bills.filter { !$0.isPaid } }
-    private var unpaidTotal: Double { unpaid.reduce(0) { $0 + $1.amount } }
-    private var overdueCount: Int { unpaid.filter(\Bill.isOverdue).count }
-    private var categoryTotals: [(Bill.Category, Double)] {
-        Dictionary(grouping: unpaid, by: \Bill.category)
+    private var unpaidBills: [Bill] { bills.filter { !$0.isPaid } }
+    private var unpaidTotal: Double { unpaidBills.reduce(0) { $0 + $1.amount } }
+    private var overdueCount: Int  { unpaidBills.filter(\.isOverdue).count }
+    private var paidCount: Int     { bills.filter(\.isPaid).count }
+
+    private var billsThisMonth: Int {
+        bills.filter { Calendar.current.isDate($0.date, equalTo: .now, toGranularity: .month) }.count
+    }
+
+    private var billCategoryTotals: [(Bill.Category, Double)] {
+        Dictionary(grouping: unpaidBills, by: \Bill.category)
             .map { ($0.key, $0.value.reduce(0) { $0 + $1.amount }) }
             .sorted { $0.0.rawValue < $1.0.rawValue }
     }
-    @Query private var txns: [Transaction]
+
+    private var txnCategoryTotals: [(Transaction.Category, Double)] {
+        Dictionary(grouping: txns, by: \Transaction.category)
+            .map { ($0.key, $0.value.reduce(0) { $0 + $1.amount }) }
+            .sorted { $0.0.rawValue < $1.0.rawValue }
+    }
 
     var body: some View {
         NavigationStack {
             ScrollView {
                 VStack(spacing: 24) {
+
                     CardView {
-                        VStack(alignment: .leading, spacing: 4) {
+                        VStack(alignment: .leading, spacing: 6) {
                             Text("Unpaid total")
-                                .font(.subheadline)
+                                .font(.caption.weight(.semibold))
                                 .foregroundStyle(.secondary)
                             Text("LKR \(unpaidTotal, format: .number)")
-                                .font(.largeTitle.bold())
+                                .font(.system(size: 34, weight: .bold))
+                            Text("\(unpaidBills.count) bill\(unpaidBills.count == 1 ? "" : "s") pending")
+                                .font(.subheadline)
+                                .foregroundStyle(.secondary)
                         }
                         .frame(maxWidth: .infinity, alignment: .leading)
                     }
 
                     CardView {
-                        VStack(alignment: .leading) {
-                            Text("By category")
-                                .font(.subheadline)
-                                .foregroundStyle(.secondary)
-                            Chart(categoryTotals, id: \.0) { cat, total in
-                                BarMark(
-                                    x: .value("Category", cat.rawValue),
-                                    y: .value("Amount", total)
-                                )
-                            }
-                            .chartYAxis { AxisMarks(position: .leading) }
-                            .frame(height: 220)
+                        HStack(spacing: 32) {
+                            StatBlock(title: "This month", value: billsThisMonth)
+                            StatBlock(title: "Paid",       value: paidCount)
+                            StatBlock(title: "Overdue",    value: overdueCount,
+                                      color: overdueCount > 0 ? .orange : .secondary)
                         }
                     }
 
-                    if overdueCount > 0 {
+                    if !txnCategoryTotals.isEmpty {
                         CardView {
-                            HStack(spacing: 8) {
-                                Image(systemName: "exclamationmark.triangle.fill")
-                                    .foregroundColor(.orange)
-                                    .font(.title2)
-                                Text("\(overdueCount) bill\(overdueCount > 1 ? "s" : "") overdue!")
-                                    .font(.headline)
+                            VStack(alignment: .leading) {
+                                Text("Spending by category")
+                                    .font(.caption.weight(.semibold))
+                                    .foregroundStyle(.secondary)
+                                PieChart(totals: txnCategoryTotals)
+                                    .frame(height: 220)
                             }
                         }
                     }
-    
-                    Button("Export Bills CSV") {
-                        let csv = ExportService.exportBills(bills)
-                        print(csv)
+
+                    if !billCategoryTotals.isEmpty {
+                        CardView {
+                            VStack(alignment: .leading) {
+                                Text("Unpaid bills by category")
+                                    .font(.caption.weight(.semibold))
+                                    .foregroundStyle(.secondary)
+                                Chart(billCategoryTotals, id: \.0) { cat, total in
+                                    BarMark(
+                                        x: .value("Category", cat.rawValue),
+                                        y: .value("Amount", total)
+                                    )
+                                }
+                                .chartYAxis { AxisMarks(position: .leading) }
+                                .frame(height: 220)
+                            }
+                        }
                     }
 
-                    Button("Export Transactions CSV") {
-                        let csv = ExportService.exportTransactions(txns)
-                        print(csv)
+                    HStack {
+                        Button("Export Bills CSV") {
+                            print(ExportService.exportBills(bills))
+                        }
+                        Spacer(minLength: 20)
+                        Button("Export Txns CSV") {
+                            print(ExportService.exportTransactions(txns))
+                        }
                     }
+                    .font(.subheadline)
+                    .padding(.horizontal)
                 }
-                .padding()
+                .padding(.vertical)
             }
             .navigationTitle("Overview")
+        }
+    }
+}
+
+private struct StatBlock: View {
+    let title: String
+    let value: Int
+    var color: Color = .accentColor
+    var body: some View {
+        VStack {
+            Text("\(value)")
+                .font(.title.bold())
+                .foregroundStyle(color)
+            Text(title)
+                .font(.caption)
+                .foregroundStyle(.secondary)
+        }
+    }
+}
+
+private struct PieChart: View {
+    let totals: [(Transaction.Category, Double)]
+    var body: some View {
+        VStack {
+            Chart(totals, id: \.0) { cat, total in
+                SectorMark(
+                    angle: .value("Amount", total),
+                    innerRadius: .ratio(0.55),
+                    angularInset: 2
+                )
+                .foregroundStyle(by: .value("Cat", cat.rawValue))
+            }
+            .chartLegend(.visible)
+            .chartLegend(position: .bottom)
         }
     }
 }

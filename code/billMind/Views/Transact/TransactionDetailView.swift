@@ -11,6 +11,7 @@ struct TransactionDetailView: View {
             DetailRow(label: "Amount",   value: "LKR \(String(format: "%.2f", txn.amount))")
             DetailRow(label: "Date",     value: dateFormatter.string(from: txn.date))
             DetailRow(label: "Category", value: txn.category.rawValue)
+            DetailRow(label: "Details", value: txn.cardLast4 ?? "N/A")
         }
         .navigationTitle("Transaction")
     }

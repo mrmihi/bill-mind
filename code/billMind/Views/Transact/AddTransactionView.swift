@@ -1,6 +1,6 @@
 import SwiftUI
 import SwiftData
-import PhotosUI   // optional if you want a receipt photo too
+import PhotosUI
 
 struct AddTransactionView: View {
     @Environment(\.modelContext) private var context

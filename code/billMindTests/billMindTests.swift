@@ -35,15 +35,13 @@ final class BillTests: XCTestCase {
   }
 
     @MainActor func testSwiftDataInsertAndFetch() throws {
-    // In‑memory container for testing
     let container = try ModelContainer(for: Bill.self)
     let context = container.mainContext
     
     let bill = Bill(name: "Test", date: .now, amount: 42, frequency: .daily)
     context.insert(bill)
     try context.save()
-    
-    // Fetch all bills sorted by date
+
     let descriptor = FetchDescriptor<Bill>(
       sortBy: [ SortDescriptor<Bill>(\Bill.date) ]
     )

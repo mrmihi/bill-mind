@@ -15,3 +15,10 @@ extension ModelContainer {
         return try! ModelContainer(for: schema, configurations: [config])
     }()
 }
+
+extension ModelContext {
+    func fetchOne<T: PersistentModel>(_ descriptor: FetchDescriptor<T>) throws -> T? {
+        try fetch(descriptor).first
+    }
+}
+
