@@ -7,7 +7,7 @@ final class billMindUITests: XCTestCase {
   override func setUpWithError() throws {
     continueAfterFailure = false
     app = XCUIApplication()
-    app.launchArguments = ["-UITest"]      // if you want a special launch mode
+    app.launchArguments = ["-UITest"]
     app.launch()
   }
 
@@ -25,7 +25,6 @@ final class billMindUITests: XCTestCase {
     amountField.tap()
     amountField.typeText("150")
 
-    // scroll so Save button is visible if needed
     app.swipeUp()
     let saveButton = app.buttons["Save"]
     XCTAssertTrue(saveButton.isEnabled)
@@ -34,11 +33,9 @@ final class billMindUITests: XCTestCase {
     let billsTab = app.tabBars.buttons["Bills"]
     billsTab.tap()
 
-    // verify row exists
     let lunchCell = app.staticTexts["Lunch"]
     XCTAssertTrue(lunchCell.waitForExistence(timeout: 2))
 
-    // verify the amount label
     XCTAssertTrue(app.staticTexts.containing(NSPredicate(format: "label CONTAINS %@", "LKR 150")).element.exists)
   }
 }

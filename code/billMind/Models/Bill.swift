@@ -48,7 +48,8 @@ final class Bill: Identifiable {
     var isPaid: Bool
     var paidDate: Date?
     var receiptData: Data?
-
+    var cardLast4: String?
+    
     var category: Category { categoryRaw }
     var paymentMode: PaymentMode { paymentModeRaw }
     var frequency: Frequency { frequencyRaw ?? .none }
@@ -65,7 +66,8 @@ final class Bill: Identifiable {
         frequency: Frequency = .none,
         receiptData: Data? = nil,
         isPaid: Bool = false,
-        paidDate: Date? = nil
+        paidDate: Date? = nil,
+        cardLast4: String? = nil
     ) {
         self.id = id
         self.name = name
@@ -77,6 +79,7 @@ final class Bill: Identifiable {
         self.receiptData = receiptData
         self.isPaid = isPaid
         self.paidDate = paidDate
+        self.cardLast4 = cardLast4
     }
 
     func nextDate() -> Date? {

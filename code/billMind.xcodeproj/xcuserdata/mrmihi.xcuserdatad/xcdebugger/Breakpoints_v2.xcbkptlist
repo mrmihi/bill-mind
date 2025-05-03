@@ -23,15 +23,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "2B58E2A6-E23E-4EB8-A4DE-276E32919628"
-            shouldBeEnabled = "Yes"
+            uuid = "376A7EBD-97A4-47B4-B64B-BED758CBC462"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "billMind/Views/HomeDashboardView.swift"
+            filePath = "billMind/Views/Transact/TransactionDetailView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "22"
-            endingLineNumber = "22"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
             landmarkName = "body"
             landmarkType = "24">
          </BreakpointContent>

@@ -4,7 +4,9 @@ import SwiftData
 @main
 struct BillsApp: App {
 
-    init() { NotificationManager.requestAuthorization() }
+    init() {
+        NotificationManager.requestAuthorization()
+    }
 
     var body: some Scene {
         WindowGroup {
