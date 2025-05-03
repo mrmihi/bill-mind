@@ -30,8 +30,10 @@ enum SMSImporter {
                               payee: "SMS Payee",
                               amount: amount,
                               category: .other)
-        context.insert(txn)
-        do    { try context.save(); print("[Importer] saved OK") }
+        
+        print(txn.payee, txn.date, txn.amount, txn.category)
+        context.insert(txn)   
+        do { try context.save(); print("[Importer] saved OK") }
         catch { print("[Importer] save error:", error) }
     }
 }

@@ -2,8 +2,10 @@ import SwiftUI
 import SwiftData
 
 struct TransactionsListView: View {
-    @Query(sort: \Transaction.date, order: .reverse) private var txns: [Transaction]
-    init() {}   // expose public init
+    @Query(sort: \Transaction.date, order: .reverse)
+    private var txns: [Transaction]
+    @State private var showAddTxn = false
+    init() {}
 
     var body: some View {
         NavigationStack {
@@ -17,6 +19,19 @@ struct TransactionsListView: View {
                 }
             }
             .navigationTitle("Transactions")
+            .toolbar {
+                           ToolbarItem(placement: .navigationBarTrailing) {
+                               Button {
+                                   showAddTxn = true
+                               } label: {
+                                   Image(systemName: "plus")
+                               }
+                               .accessibilityLabel("Add Transaction")
+                           }
+                       }
+                       .sheet(isPresented: $showAddTxn) {         // ← sheet
+                           AddTransactionView()
+                       }
         }
     }
 }

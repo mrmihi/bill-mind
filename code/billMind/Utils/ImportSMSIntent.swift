@@ -1,6 +1,3 @@
-//  ImportSMSIntent.swift
-//  billMind
-
 import AppIntents
 import SwiftData
 
@@ -12,9 +9,8 @@ struct ImportSMSIntent: AppIntent {
 
     func perform() async throws -> some IntentResult {
 
-        try await MainActor.run {            // ← key change
-            let container = try ModelContainer(for: Bill.self)
-            let context   = container.mainContext
+        await MainActor.run {
+            let context = ModelContainer.shared.mainContext
             SMSImporter.import(body, into: context)
         }
 

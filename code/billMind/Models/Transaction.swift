@@ -5,8 +5,10 @@ import Foundation
 final class Transaction: Identifiable {
 
     enum Category: String, CaseIterable, Identifiable, Codable {
-        case food = "Food"      , transport = "Transport"
-        case shopping = "Shopping", utilities = "Utilities"
+        case food = "Food"
+        case transport = "Transport"
+        case shopping = "Shopping"
+        case utilities = "Utilities"
         case other = "Other"
         var id: String { rawValue }
         var symbol: String {

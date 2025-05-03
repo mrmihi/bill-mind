@@ -8,8 +8,8 @@ struct BillsApp: App {
 
     var body: some Scene {
         WindowGroup {
-            RootView()
+            ContentView()
         }
-        .modelContainer(for: [Bill.self, Transaction.self])
+        .modelContainer(ModelContainer.shared)
     }
 }

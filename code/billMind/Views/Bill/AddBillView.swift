@@ -70,6 +70,11 @@ struct AddBillView: View {
                     }
                 }
             }.navigationTitle("Add Bill").toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                                       Button(action: { dismiss() }) {
+                                           Label("Back", systemImage: "chevron.backward")
+                                       }
+                                   }
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Save") { save() }.disabled(
                         name.isEmpty || amount == nil

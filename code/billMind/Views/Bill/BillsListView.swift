@@ -2,10 +2,10 @@ import SwiftUI
 import SwiftData
 
 struct BillsListView: View {
-    // Fetch all bills; sorting handled in view if needed
     @Query private var bills: [Bill]
     @Environment(\.modelContext) private var context
     @State private var showPaidOnly = false
+    @State private var showAddBill  = false
     init() {}
 
     private var viewBills: [Bill] {
@@ -25,8 +25,21 @@ struct BillsListView: View {
             .navigationTitle("Bills")
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) { EditButton() }
-                ToolbarItem(placement: .navigationBarTrailing) { Toggle("Paid", isOn: $showPaidOnly) }
+                               ToolbarItem(placement: .navigationBarTrailing) {
+                                   HStack {
+                                       Toggle("Paid", isOn: $showPaidOnly)
+                                       Button {
+                                           showAddBill = true
+                                       } label: {
+                                           Image(systemName: "plus")
+                                       }
+                                       .accessibilityLabel("Add Bill")
+                                   }
+                               }
             }
+            .sheet(isPresented: $showAddBill) {
+                            AddBillView()
+                        }
         }
     }
 
