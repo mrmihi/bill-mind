@@ -14,6 +14,7 @@ struct HomeDashboardView: View {
             .map { ($0.key, $0.value.reduce(0) { $0 + $1.amount }) }
             .sorted { $0.0.rawValue < $1.0.rawValue }
     }
+    @Query private var txns: [Transaction]
 
     var body: some View {
         NavigationStack {
@@ -56,6 +57,16 @@ struct HomeDashboardView: View {
                                     .font(.headline)
                             }
                         }
+                    }
+    
+                    Button("Export Bills CSV") {
+                        let csv = ExportService.exportBills(bills)
+                        print(csv)
+                    }
+
+                    Button("Export Transactions CSV") {
+                        let csv = ExportService.exportTransactions(txns)
+                        print(csv)
                     }
                 }
                 .padding()

@@ -1,10 +1,14 @@
-import SwiftData
 import Foundation
+import SwiftData
 
 @Model
 final class Bill: Identifiable {
     enum Category: String, CaseIterable, Identifiable, Codable {
-        case general = "General", utilities = "Utilities", rent = "Rent", entertainment = "Entertainment", groceries = "Groceries"
+        case general = "General"
+        case utilities = "Utilities"
+        case rent = "Rent"
+        case entertainment = "Entertainment"
+        case groceries = "Groceries"
         var id: String { rawValue }
         var symbol: String {
             switch self {
@@ -17,11 +21,23 @@ final class Bill: Identifiable {
         }
     }
 
-    enum PaymentMode: String, CaseIterable, Identifiable, Codable { case cash="Cash", card="Card", bank="Bank Transfer", other="Other"; var id:String{rawValue} }
+    enum PaymentMode: String, CaseIterable, Identifiable, Codable {
+        case cash = "Cash"
+        case card = "Card"
+        case bank = "Bank Transfer"
+        case other = "Other"
+        var id: String { rawValue }
+    }
 
-    enum Frequency: String, CaseIterable, Identifiable, Codable { case none="One‑off", daily="Daily", weekly="Weekly", monthly="Monthly", yearly="Yearly"; var id:String{rawValue} }
+    enum Frequency: String, CaseIterable, Identifiable, Codable {
+        case none = "One‑off"
+        case daily = "Daily"
+        case weekly = "Weekly"
+        case monthly = "Monthly"
+        case yearly = "Yearly"
+        var id: String { rawValue }
+    }
 
-    // Stored
     var id: UUID
     var name: String
     var date: Date
@@ -33,14 +49,24 @@ final class Bill: Identifiable {
     var paidDate: Date?
     var receiptData: Data?
 
-    // Computed
     var category: Category { categoryRaw }
     var paymentMode: PaymentMode { paymentModeRaw }
     var frequency: Frequency { frequencyRaw ?? .none }
     var isOverdue: Bool { !isPaid && date < .now }
     var hasReceipt: Bool { receiptData != nil }
 
-    init(id: UUID = UUID(), name: String, date: Date, amount: Double, category: Category = .general, paymentMode: PaymentMode = .cash, frequency: Frequency = .none, receiptData: Data? = nil, isPaid: Bool = false, paidDate: Date? = nil) {
+    init(
+        id: UUID = UUID(),
+        name: String,
+        date: Date,
+        amount: Double,
+        category: Category = .general,
+        paymentMode: PaymentMode = .cash,
+        frequency: Frequency = .none,
+        receiptData: Data? = nil,
+        isPaid: Bool = false,
+        paidDate: Date? = nil
+    ) {
         self.id = id
         self.name = name
         self.date = date
