@@ -1,3 +1,5 @@
+#if os(iOS) && !targetEnvironment(macCatalyst)
+
 import SwiftUI
 import Vision
 import VisionKit
@@ -302,4 +304,27 @@ struct DataScannerViewControllerRepresentable: UIViewControllerRepresentable {
             // Handle newly recognized items
         }
     }
-} 
+}
+
+#endif // iOS camera-scanner implementation
+
+#if targetEnvironment(macCatalyst) || os(macOS)
+
+import SwiftUI
+
+struct ReceiptScannerView: View {
+    var body: some View {
+        VStack(spacing: 16) {
+            Image(systemName: "doc.text.viewfinder")
+                .font(.system(size: 60))
+                .foregroundStyle(.secondary)
+            Text("Receipt scanning requires an iPhone or iPad running iOS 17+")
+                .font(.title3)
+                .multilineTextAlignment(.center)
+                .padding()
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+    }
+}
+
+#endif 
