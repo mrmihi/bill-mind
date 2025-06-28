@@ -308,23 +308,126 @@ struct DataScannerViewControllerRepresentable: UIViewControllerRepresentable {
 
 #endif // iOS camera-scanner implementation
 
-#if targetEnvironment(macCatalyst) || os(macOS)
+#if targetEnvironment(macCatalyst) || os(macOS) || os(visionOS)
 
 import SwiftUI
+import Vision
+import UniformTypeIdentifiers
+#if os(macOS)
+import AppKit
+typealias PlatformImage = NSImage
+#else
+import UIKit
+typealias PlatformImage = UIImage
+#endif
 
 struct ReceiptScannerView: View {
+    @State private var droppedImage: PlatformImage?
+    @State private var scannedText: String = ""
+    @State private var isTargeted = false
+    @State private var isScanning = false
+    @State private var showAddBill = false
+
     var body: some View {
-        VStack(spacing: 16) {
-            Image(systemName: "doc.text.viewfinder")
-                .font(.system(size: 60))
-                .foregroundStyle(.secondary)
-            Text("Receipt scanning requires an iPhone or iPad running iOS 17+")
-                .font(.title3)
-                .multilineTextAlignment(.center)
-                .padding()
+        VStack(spacing: 20) {
+            if let img = droppedImage {
+                PlatformImageView(image: img)
+                    .scaledToFit()
+                    .frame(maxHeight: 300)
+
+                if isScanning {
+                    ProgressView("Extracting text…")
+                } else if !scannedText.isEmpty {
+                    ScrollView {
+                        Text(scannedText)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .padding()
+                    }
+                    .frame(maxHeight: 180)
+                }
+
+                Button("Create Bill") { showAddBill = true }
+                    .disabled(scannedText.isEmpty)
+            } else {
+                VStack(spacing: 10) {
+                    Image(systemName: isTargeted ? "tray.and.arrow.down" : "doc.text.viewfinder")
+                        .font(.system(size: 70))
+                        .foregroundStyle(.secondary)
+                    Text("Drag a receipt image or PDF here to extract details")
+                        .multilineTextAlignment(.center)
+                        .foregroundStyle(.secondary)
+                }
+            }
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .padding()
+        .onDrop(of: [UTType.image, UTType.pdf, UTType.fileURL], isTargeted: $isTargeted) { providers in
+            guard let provider = providers.first else { return false }
+
+            // Use the closure-based API for broad SDK compatibility.
+            let imageUTI = UTType.image.identifier
+            if provider.hasItemConformingToTypeIdentifier(imageUTI) {
+                _ = provider.loadDataRepresentation(forTypeIdentifier: imageUTI) { data, _ in
+                    if let data {
+                        Task { await handleDroppedData(data) }
+                    }
+                }
+            } else {
+                let pdfUTI = UTType.pdf.identifier
+                _ = provider.loadDataRepresentation(forTypeIdentifier: pdfUTI) { data, _ in
+                    if let data {
+                        Task { await handleDroppedData(data) }
+                    }
+                }
+            }
+            return true
+        }
+        .sheet(isPresented: $showAddBill) {
+            AddBillView()
+        }
+    }
+
+    @MainActor
+    private func handleDroppedData(_ data: Data) async {
+        if let img = PlatformImage(data: data) {
+            droppedImage = img
+            await extractText(from: img)
+        } else {
+            // Handle other types (e.g., PDF) in the future
+        }
+    }
+
+    private func extractText(from img: PlatformImage) async {
+        isScanning = true
+#if os(macOS)
+        guard let cgImage = img.cgImage(forProposedRect: nil, context: nil, hints: nil) else {
+            isScanning = false; return }
+#else
+        guard let cgImage = img.cgImage else { isScanning = false; return }
+#endif
+        let request = VNRecognizeTextRequest { req, _ in
+            let text = (req.results as? [VNRecognizedTextObservation])?
+                .compactMap { $0.topCandidates(1).first?.string }
+                .joined(separator: "\n") ?? ""
+            DispatchQueue.main.async {
+                self.scannedText = text; self.isScanning = false
+            }
+        }
+        request.recognitionLevel = .accurate
+        let handler = VNImageRequestHandler(cgImage: cgImage, options: [:])
+        try? handler.perform([request])
     }
 }
 
-#endif 
+// Helper view to display a platform image with resizable behaviour
+private struct PlatformImageView: View {
+    let image: PlatformImage
+    var body: some View {
+#if os(macOS)
+        Image(nsImage: image).resizable()
+#else
+        Image(uiImage: image).resizable()
+#endif
+    }
+}
+
+#endif // catalyst / macOS placeholder with drag-&-drop OCR 
