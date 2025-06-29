@@ -34,6 +34,12 @@ struct BillsApp: App {
         }
         .modelContainer(ModelContainer.shared)
         
+        // Menu-bar extra for quick actions
+        MenuBarExtra("billMind", systemImage: "tray.full") {
+            MenuBarContent()
+        }
+        .menuBarExtraStyle(.window)
+        
         // Extra windows for macOS multi-window support
         WindowGroup("Add Bill", id: "addBill") {
             AddBillView()
@@ -68,6 +74,23 @@ struct BillMindCommands: Commands {
                 .keyboardShortcut("a", modifiers: [.command, .option])
             Button("Receipt Scanner") { openWindow(id: "scanner") }
         }
+    }
+}
+
+// Content used inside the menu-bar extra
+private struct MenuBarContent: View {
+    @Environment(\.openWindow) private var openWindow
+    var body: some View {
+        VStack {
+            Button("New Bill") { openWindow(id: "addBill") }
+            Button("New Transaction") { openWindow(id: "addTransaction") }
+            Divider()
+            Button("Show Analytics") { openWindow(id: "analytics") }
+            Button("Open Main Window") { NSApp.activate(ignoringOtherApps: true) }
+            Divider()
+            Button("Quit billMind") { NSApp.terminate(nil) }
+        }
+        .padding(8)
     }
 }
 #endif

@@ -6,7 +6,40 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		7A420B2B2E0F295800394579 /* RealityKitContent in Frameworks */ = {isa = PBXBuildFile; productRef = 7A420B2A2E0F295800394579 /* RealityKitContent */; };
+		7A420BBB2E0F9AFF00394579 /* billMind Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 7A420BBA2E0F9AFF00394579 /* billMind Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
+		7A420B382E0F295900394579 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7A4A583B2DB51E74003DF711 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7A420B252E0F295800394579;
+			remoteInfo = "billMind - VisionOS";
+		};
+		7A420BBC2E0F9AFF00394579 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7A4A583B2DB51E74003DF711 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7A420BB92E0F9AFF00394579;
+			remoteInfo = "billMind Watch App";
+		};
+		7A420BCA2E0F9B0000394579 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7A4A583B2DB51E74003DF711 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7A420BB92E0F9AFF00394579;
+			remoteInfo = "billMind Watch App";
+		};
+		7A420BD42E0F9B0000394579 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7A4A583B2DB51E74003DF711 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7A420BB92E0F9AFF00394579;
+			remoteInfo = "billMind Watch App";
+		};
 		7A4A58552DB51E75003DF711 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 7A4A583B2DB51E74003DF711 /* Project object */;
@@ -23,13 +56,72 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		7A420B182E0F286500394579 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7A420BDE2E0F9B0000394579 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				7A420BBB2E0F9AFF00394579 /* billMind Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		7A420AEF2E0F286400394579 /* billMind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = billMind.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A420B262E0F295800394579 /* billMind - VisionOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "billMind - VisionOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A420B292E0F295800394579 /* RealityKitContent */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = RealityKitContent; sourceTree = "<group>"; };
+		7A420B372E0F295900394579 /* billMind - VisionOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "billMind - VisionOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A420BB52E0F9AFF00394579 /* billMind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = billMind.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A420BBA2E0F9AFF00394579 /* billMind Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "billMind Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A420BC92E0F9B0000394579 /* billMind Watch AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "billMind Watch AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A420BD32E0F9B0000394579 /* billMind Watch AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "billMind Watch AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A4A58432DB51E74003DF711 /* billMind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = billMind.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A4A58542DB51E75003DF711 /* billMindTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = billMindTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A4A585E2DB51E75003DF711 /* billMindUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = billMindUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		7A420B3D2E0F295900394579 /* Exceptions for "billMind - VisionOS" folder in "billMind - VisionOS" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 7A420B252E0F295800394579 /* billMind - VisionOS */;
+		};
+		7A420B502E0F997100394579 /* Exceptions for "billMind" folder in "billMind - VisionOS" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Models/Bill.swift,
+				Models/ModelContainer.swift,
+				Models/Transaction.swift,
+				Utils/NotificationManager.swift,
+			);
+			target = 7A420B252E0F295800394579 /* billMind - VisionOS */;
+		};
+		7A420BEB2E0F9C1F00394579 /* Exceptions for "billMind" folder in "billMind Watch App" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Models/Bill.swift,
+				Models/ModelContainer.swift,
+				Models/Transaction.swift,
+				Utils/NotificationManager.swift,
+			);
+			target = 7A420BB92E0F9AFF00394579 /* billMind Watch App */;
+		};
 		7A4A58662DB51E75003DF711 /* Exceptions for "billMind" folder in "billMind" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
@@ -40,10 +132,40 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		7A420B272E0F295800394579 /* billMind - VisionOS */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				7A420B3D2E0F295900394579 /* Exceptions for "billMind - VisionOS" folder in "billMind - VisionOS" target */,
+			);
+			path = "billMind - VisionOS";
+			sourceTree = "<group>";
+		};
+		7A420B3A2E0F295900394579 /* billMind - VisionOSTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "billMind - VisionOSTests";
+			sourceTree = "<group>";
+		};
+		7A420BBE2E0F9AFF00394579 /* billMind Watch App */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "billMind Watch App";
+			sourceTree = "<group>";
+		};
+		7A420BCC2E0F9B0000394579 /* billMind Watch AppTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "billMind Watch AppTests";
+			sourceTree = "<group>";
+		};
+		7A420BD62E0F9B0000394579 /* billMind Watch AppUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "billMind Watch AppUITests";
+			sourceTree = "<group>";
+		};
 		7A4A58452DB51E74003DF711 /* billMind */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
 				7A4A58662DB51E75003DF711 /* Exceptions for "billMind" folder in "billMind" target */,
+				7A420B502E0F997100394579 /* Exceptions for "billMind" folder in "billMind - VisionOS" target */,
+				7A420BEB2E0F9C1F00394579 /* Exceptions for "billMind" folder in "billMind Watch App" target */,
 			);
 			path = billMind;
 			sourceTree = "<group>";
@@ -61,6 +183,42 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		7A420B232E0F295800394579 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7A420B2B2E0F295800394579 /* RealityKitContent in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7A420B342E0F295900394579 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7A420BB72E0F9AFF00394579 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7A420BC62E0F9B0000394579 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7A420BD02E0F9B0000394579 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7A4A58402DB51E74003DF711 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -85,12 +243,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7A420B282E0F295800394579 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				7A420B292E0F295800394579 /* RealityKitContent */,
+			);
+			path = Packages;
+			sourceTree = "<group>";
+		};
 		7A4A583A2DB51E74003DF711 = {
 			isa = PBXGroup;
 			children = (
 				7A4A58452DB51E74003DF711 /* billMind */,
 				7A4A58572DB51E75003DF711 /* billMindTests */,
 				7A4A58612DB51E75003DF711 /* billMindUITests */,
+				7A420B272E0F295800394579 /* billMind - VisionOS */,
+				7A420B282E0F295800394579 /* Packages */,
+				7A420B3A2E0F295900394579 /* billMind - VisionOSTests */,
+				7A420BBE2E0F9AFF00394579 /* billMind Watch App */,
+				7A420BCC2E0F9B0000394579 /* billMind Watch AppTests */,
+				7A420BD62E0F9B0000394579 /* billMind Watch AppUITests */,
 				7A4A58442DB51E74003DF711 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -101,6 +273,13 @@
 				7A4A58432DB51E74003DF711 /* billMind.app */,
 				7A4A58542DB51E75003DF711 /* billMindTests.xctest */,
 				7A4A585E2DB51E75003DF711 /* billMindUITests.xctest */,
+				7A420AEF2E0F286400394579 /* billMind.app */,
+				7A420B262E0F295800394579 /* billMind - VisionOS.app */,
+				7A420B372E0F295900394579 /* billMind - VisionOSTests.xctest */,
+				7A420BB52E0F9AFF00394579 /* billMind.app */,
+				7A420BBA2E0F9AFF00394579 /* billMind Watch App.app */,
+				7A420BC92E0F9B0000394579 /* billMind Watch AppTests.xctest */,
+				7A420BD32E0F9B0000394579 /* billMind Watch AppUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -108,6 +287,157 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		7A420AEE2E0F286400394579 /* billMind */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7A420B192E0F286500394579 /* Build configuration list for PBXNativeTarget "billMind" */;
+			buildPhases = (
+				7A420AED2E0F286400394579 /* Resources */,
+				7A420B182E0F286500394579 /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = billMind;
+			packageProductDependencies = (
+			);
+			productName = billMind;
+			productReference = 7A420AEF2E0F286400394579 /* billMind.app */;
+			productType = "com.apple.product-type.application.watchapp2-container";
+		};
+		7A420B252E0F295800394579 /* billMind - VisionOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7A420B3E2E0F295900394579 /* Build configuration list for PBXNativeTarget "billMind - VisionOS" */;
+			buildPhases = (
+				7A420B222E0F295800394579 /* Sources */,
+				7A420B232E0F295800394579 /* Frameworks */,
+				7A420B242E0F295800394579 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				7A420B272E0F295800394579 /* billMind - VisionOS */,
+			);
+			name = "billMind - VisionOS";
+			packageProductDependencies = (
+				7A420B2A2E0F295800394579 /* RealityKitContent */,
+			);
+			productName = "billMind - VisionOS";
+			productReference = 7A420B262E0F295800394579 /* billMind - VisionOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7A420B362E0F295900394579 /* billMind - VisionOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7A420B412E0F295900394579 /* Build configuration list for PBXNativeTarget "billMind - VisionOSTests" */;
+			buildPhases = (
+				7A420B332E0F295900394579 /* Sources */,
+				7A420B342E0F295900394579 /* Frameworks */,
+				7A420B352E0F295900394579 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7A420B392E0F295900394579 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				7A420B3A2E0F295900394579 /* billMind - VisionOSTests */,
+			);
+			name = "billMind - VisionOSTests";
+			packageProductDependencies = (
+			);
+			productName = "billMind - VisionOSTests";
+			productReference = 7A420B372E0F295900394579 /* billMind - VisionOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		7A420BB42E0F9AFF00394579 /* billMind */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7A420BDF2E0F9B0000394579 /* Build configuration list for PBXNativeTarget "billMind" */;
+			buildPhases = (
+				7A420BB32E0F9AFF00394579 /* Resources */,
+				7A420BDE2E0F9B0000394579 /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7A420BBD2E0F9AFF00394579 /* PBXTargetDependency */,
+			);
+			name = billMind;
+			packageProductDependencies = (
+			);
+			productName = billMind;
+			productReference = 7A420BB52E0F9AFF00394579 /* billMind.app */;
+			productType = "com.apple.product-type.application.watchapp2-container";
+		};
+		7A420BB92E0F9AFF00394579 /* billMind Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7A420BDB2E0F9B0000394579 /* Build configuration list for PBXNativeTarget "billMind Watch App" */;
+			buildPhases = (
+				7A420BB62E0F9AFF00394579 /* Sources */,
+				7A420BB72E0F9AFF00394579 /* Frameworks */,
+				7A420BB82E0F9AFF00394579 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				7A420BBE2E0F9AFF00394579 /* billMind Watch App */,
+			);
+			name = "billMind Watch App";
+			packageProductDependencies = (
+			);
+			productName = "billMind Watch App";
+			productReference = 7A420BBA2E0F9AFF00394579 /* billMind Watch App.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7A420BC82E0F9B0000394579 /* billMind Watch AppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7A420BE22E0F9B0000394579 /* Build configuration list for PBXNativeTarget "billMind Watch AppTests" */;
+			buildPhases = (
+				7A420BC52E0F9B0000394579 /* Sources */,
+				7A420BC62E0F9B0000394579 /* Frameworks */,
+				7A420BC72E0F9B0000394579 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7A420BCB2E0F9B0000394579 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				7A420BCC2E0F9B0000394579 /* billMind Watch AppTests */,
+			);
+			name = "billMind Watch AppTests";
+			packageProductDependencies = (
+			);
+			productName = "billMind Watch AppTests";
+			productReference = 7A420BC92E0F9B0000394579 /* billMind Watch AppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		7A420BD22E0F9B0000394579 /* billMind Watch AppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7A420BE52E0F9B0000394579 /* Build configuration list for PBXNativeTarget "billMind Watch AppUITests" */;
+			buildPhases = (
+				7A420BCF2E0F9B0000394579 /* Sources */,
+				7A420BD02E0F9B0000394579 /* Frameworks */,
+				7A420BD12E0F9B0000394579 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7A420BD52E0F9B0000394579 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				7A420BD62E0F9B0000394579 /* billMind Watch AppUITests */,
+			);
+			name = "billMind Watch AppUITests";
+			packageProductDependencies = (
+			);
+			productName = "billMind Watch AppUITests";
+			productReference = 7A420BD32E0F9B0000394579 /* billMind Watch AppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		7A4A58422DB51E74003DF711 /* billMind */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7A4A58672DB51E75003DF711 /* Build configuration list for PBXNativeTarget "billMind" */;
@@ -183,9 +513,33 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1630;
+				LastSwiftUpdateCheck = 1640;
 				LastUpgradeCheck = 1630;
 				TargetAttributes = {
+					7A420AEE2E0F286400394579 = {
+						CreatedOnToolsVersion = 16.4;
+					};
+					7A420B252E0F295800394579 = {
+						CreatedOnToolsVersion = 16.4;
+					};
+					7A420B362E0F295900394579 = {
+						CreatedOnToolsVersion = 16.4;
+						TestTargetID = 7A420B252E0F295800394579;
+					};
+					7A420BB42E0F9AFF00394579 = {
+						CreatedOnToolsVersion = 16.4;
+					};
+					7A420BB92E0F9AFF00394579 = {
+						CreatedOnToolsVersion = 16.4;
+					};
+					7A420BC82E0F9B0000394579 = {
+						CreatedOnToolsVersion = 16.4;
+						TestTargetID = 7A420BB92E0F9AFF00394579;
+					};
+					7A420BD22E0F9B0000394579 = {
+						CreatedOnToolsVersion = 16.4;
+						TestTargetID = 7A420BB92E0F9AFF00394579;
+					};
 					7A4A58422DB51E74003DF711 = {
 						CreatedOnToolsVersion = 16.3;
 					};
@@ -216,11 +570,67 @@
 				7A4A58422DB51E74003DF711 /* billMind */,
 				7A4A58532DB51E75003DF711 /* billMindTests */,
 				7A4A585D2DB51E75003DF711 /* billMindUITests */,
+				7A420AEE2E0F286400394579 /* billMind */,
+				7A420B252E0F295800394579 /* billMind - VisionOS */,
+				7A420B362E0F295900394579 /* billMind - VisionOSTests */,
+				7A420BB42E0F9AFF00394579 /* billMind */,
+				7A420BB92E0F9AFF00394579 /* billMind Watch App */,
+				7A420BC82E0F9B0000394579 /* billMind Watch AppTests */,
+				7A420BD22E0F9B0000394579 /* billMind Watch AppUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		7A420AED2E0F286400394579 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7A420B242E0F295800394579 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7A420B352E0F295900394579 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7A420BB32E0F9AFF00394579 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7A420BB82E0F9AFF00394579 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7A420BC72E0F9B0000394579 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7A420BD12E0F9B0000394579 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7A4A58412DB51E74003DF711 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -245,6 +655,41 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		7A420B222E0F295800394579 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7A420B332E0F295900394579 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7A420BB62E0F9AFF00394579 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7A420BC52E0F9B0000394579 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7A420BCF2E0F9B0000394579 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7A4A583F2DB51E74003DF711 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -269,6 +714,26 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		7A420B392E0F295900394579 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7A420B252E0F295800394579 /* billMind - VisionOS */;
+			targetProxy = 7A420B382E0F295900394579 /* PBXContainerItemProxy */;
+		};
+		7A420BBD2E0F9AFF00394579 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7A420BB92E0F9AFF00394579 /* billMind Watch App */;
+			targetProxy = 7A420BBC2E0F9AFF00394579 /* PBXContainerItemProxy */;
+		};
+		7A420BCB2E0F9B0000394579 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7A420BB92E0F9AFF00394579 /* billMind Watch App */;
+			targetProxy = 7A420BCA2E0F9B0000394579 /* PBXContainerItemProxy */;
+		};
+		7A420BD52E0F9B0000394579 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7A420BB92E0F9AFF00394579 /* billMind Watch App */;
+			targetProxy = 7A420BD42E0F9B0000394579 /* PBXContainerItemProxy */;
+		};
 		7A4A58562DB51E75003DF711 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 7A4A58422DB51E74003DF711 /* billMind */;
@@ -282,6 +747,298 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		7A420B1A2E0F286500394579 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6337NY3SHR;
+				INFOPLIST_KEY_CFBundleDisplayName = billMind;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = mrmihi.billMind;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		7A420B1B2E0F286500394579 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6337NY3SHR;
+				INFOPLIST_KEY_CFBundleDisplayName = billMind;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = mrmihi.billMind;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		7A420B3F2E0F295900394579 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6337NY3SHR;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "$(TARGET_NAME)/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "mrmihi.billMind---VisionOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = xros;
+				SUPPORTED_PLATFORMS = "xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 7;
+				XROS_DEPLOYMENT_TARGET = 2.5;
+			};
+			name = Debug;
+		};
+		7A420B402E0F295900394579 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6337NY3SHR;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "$(TARGET_NAME)/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "mrmihi.billMind---VisionOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = xros;
+				SUPPORTED_PLATFORMS = "xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 7;
+				XROS_DEPLOYMENT_TARGET = 2.5;
+			};
+			name = Release;
+		};
+		7A420B422E0F295900394579 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6337NY3SHR;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "mrmihi.billMind---VisionOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = xros;
+				SUPPORTED_PLATFORMS = "watchos watchsimulator xros xrsimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "4,7";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/billMind - VisionOS.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/billMind - VisionOS";
+				XROS_DEPLOYMENT_TARGET = 2.5;
+			};
+			name = Debug;
+		};
+		7A420B432E0F295900394579 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6337NY3SHR;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "mrmihi.billMind---VisionOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = xros;
+				SUPPORTED_PLATFORMS = "watchos watchsimulator xros xrsimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "4,7";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/billMind - VisionOS.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/billMind - VisionOS";
+				XROS_DEPLOYMENT_TARGET = 2.5;
+			};
+			name = Release;
+		};
+		7A420BDC2E0F9B0000394579 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "billMind Watch App/billMind Watch App.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6337NY3SHR;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = billMind;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKWatchOnly = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = mrmihi.billMind.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 11.5;
+			};
+			name = Debug;
+		};
+		7A420BDD2E0F9B0000394579 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "billMind Watch App/billMind Watch App.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6337NY3SHR;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = billMind;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKWatchOnly = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = mrmihi.billMind.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 11.5;
+			};
+			name = Release;
+		};
+		7A420BE02E0F9B0000394579 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6337NY3SHR;
+				INFOPLIST_KEY_CFBundleDisplayName = billMind;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = mrmihi.billMind;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		7A420BE12E0F9B0000394579 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6337NY3SHR;
+				INFOPLIST_KEY_CFBundleDisplayName = billMind;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = mrmihi.billMind;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		7A420BE32E0F9B0000394579 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6337NY3SHR;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "mrmihi.billMind-Watch-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/billMind Watch App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/billMind Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 11.5;
+			};
+			name = Debug;
+		};
+		7A420BE42E0F9B0000394579 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6337NY3SHR;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "mrmihi.billMind-Watch-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/billMind Watch App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/billMind Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 11.5;
+			};
+			name = Release;
+		};
+		7A420BE62E0F9B0000394579 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6337NY3SHR;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "mrmihi.billMind-Watch-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_TARGET_NAME = "billMind Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 11.5;
+			};
+			name = Debug;
+		};
+		7A420BE72E0F9B0000394579 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6337NY3SHR;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "mrmihi.billMind-Watch-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_TARGET_NAME = "billMind Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 11.5;
+			};
+			name = Release;
+		};
 		7A4A58682DB51E75003DF711 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -550,6 +1307,69 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		7A420B192E0F286500394579 /* Build configuration list for PBXNativeTarget "billMind" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7A420B1A2E0F286500394579 /* Debug */,
+				7A420B1B2E0F286500394579 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7A420B3E2E0F295900394579 /* Build configuration list for PBXNativeTarget "billMind - VisionOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7A420B3F2E0F295900394579 /* Debug */,
+				7A420B402E0F295900394579 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7A420B412E0F295900394579 /* Build configuration list for PBXNativeTarget "billMind - VisionOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7A420B422E0F295900394579 /* Debug */,
+				7A420B432E0F295900394579 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7A420BDB2E0F9B0000394579 /* Build configuration list for PBXNativeTarget "billMind Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7A420BDC2E0F9B0000394579 /* Debug */,
+				7A420BDD2E0F9B0000394579 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7A420BDF2E0F9B0000394579 /* Build configuration list for PBXNativeTarget "billMind" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7A420BE02E0F9B0000394579 /* Debug */,
+				7A420BE12E0F9B0000394579 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7A420BE22E0F9B0000394579 /* Build configuration list for PBXNativeTarget "billMind Watch AppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7A420BE32E0F9B0000394579 /* Debug */,
+				7A420BE42E0F9B0000394579 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7A420BE52E0F9B0000394579 /* Build configuration list for PBXNativeTarget "billMind Watch AppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7A420BE62E0F9B0000394579 /* Debug */,
+				7A420BE72E0F9B0000394579 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		7A4A583E2DB51E74003DF711 /* Build configuration list for PBXProject "billMind" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -587,6 +1407,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7A420B2A2E0F295800394579 /* RealityKitContent */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = RealityKitContent;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7A4A583B2DB51E74003DF711 /* Project object */;
 }
