@@ -10,7 +10,6 @@ import SwiftData
 
 @main
 struct BillsWatchApp: App {
-    // Insert demo bill if store empty (watch-only convenience)
     init() {
         #if os(watchOS)
         let context = ModelContainer.shared.mainContext

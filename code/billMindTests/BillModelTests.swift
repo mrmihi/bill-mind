@@ -18,8 +18,6 @@ final class BillModelTests: XCTestCase {
         container = nil
     }
     
-    // MARK: - Bill Creation Tests
-    
     func testBillCreation() throws {
         let bill = Bill(
             name: "Electricity Bill",
