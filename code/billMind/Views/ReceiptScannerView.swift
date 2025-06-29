@@ -306,7 +306,7 @@ struct DataScannerViewControllerRepresentable: UIViewControllerRepresentable {
     }
 }
 
-#endif // iOS camera-scanner implementation
+#endif
 
 #if targetEnvironment(macCatalyst) || os(macOS) || os(visionOS)
 
@@ -363,7 +363,6 @@ struct ReceiptScannerView: View {
         .onDrop(of: [UTType.image, UTType.pdf, UTType.fileURL], isTargeted: $isTargeted) { providers in
             guard let provider = providers.first else { return false }
 
-            // Use the closure-based API for broad SDK compatibility.
             let imageUTI = UTType.image.identifier
             if provider.hasItemConformingToTypeIdentifier(imageUTI) {
                 _ = provider.loadDataRepresentation(forTypeIdentifier: imageUTI) { data, _ in
@@ -418,7 +417,6 @@ struct ReceiptScannerView: View {
     }
 }
 
-// Helper view to display a platform image with resizable behaviour
 private struct PlatformImageView: View {
     let image: PlatformImage
     var body: some View {
@@ -430,4 +428,4 @@ private struct PlatformImageView: View {
     }
 }
 
-#endif // catalyst / macOS placeholder with drag-&-drop OCR 
+#endif

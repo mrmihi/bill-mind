@@ -33,7 +33,6 @@ struct SettingsView: View {
                     }
                     
                     Button("Export All Data") {
-                        // Handle export
                     }
                     .buttonStyle(.bordered)
                 }

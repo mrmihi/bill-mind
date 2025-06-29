@@ -32,6 +32,38 @@ A sophisticated bill management application for iPadOS and macOS, built with Swi
 - **Keyboard Navigation**: Full keyboard accessibility
 - **Native macOS UI**: Respects platform conventions
 
+## 🖥️ macOS Catalyst
+
+> _Full desktop class power, same SwiftUI code._
+
+### Key Features
+- Native menu-bar shortcuts for quick actions
+- Multiple windows: open Analytics, Scanner, and the main list side-by-side
+- Drag-and-drop receipts or PDFs straight onto the window for instant OCR
+- Keyboard-centric navigation throughout the app
+
+### Screenshots (placeholders)
+<!-- Replace the links below with real images -->
+| Overview | Analytics |
+|----------|-----------|
+| ![Catalyst overview](docs/mac_overview_placeholder.png) | ![Catalyst analytics](docs/mac_analytics_placeholder.png) |
+
+## ⌚️ watchOS
+
+> _Bills at a glance, right from your wrist._
+
+### Key Features
+- Next-unpaid-bill complication to keep you on schedule
+- Lightweight bill list with quick paid/unpaid toggles
+- CloudKit sync so status updates reflect instantly across devices
+- Works offline and syncs when connectivity returns
+
+### Screenshots (placeholders)
+<!-- Replace the links below with real images -->
+| Next Bill | Bill List |
+|-----------|-----------|
+| ![watchOS next](docs/watch_next_placeholder.png) | ![watchOS list](docs/watch_list_placeholder.png) |
+
 ## 🛠 Technical Stack
 
 - **SwiftUI**: Modern declarative UI framework
