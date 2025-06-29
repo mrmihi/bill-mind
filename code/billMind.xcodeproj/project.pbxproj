@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7A420B2B2E0F295800394579 /* RealityKitContent in Frameworks */ = {isa = PBXBuildFile; productRef = 7A420B2A2E0F295800394579 /* RealityKitContent */; };
 		7A420BBB2E0F9AFF00394579 /* billMind Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 7A420BBA2E0F9AFF00394579 /* billMind Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		7AF8797F2E10E10200BD9169 /* modelData.csv in Resources */ = {isa = PBXBuildFile; fileRef = 7AF8797E2E10E0FA00BD9169 /* modelData.csv */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +93,7 @@
 		7A4A58432DB51E74003DF711 /* billMind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = billMind.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A4A58542DB51E75003DF711 /* billMindTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = billMindTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A4A585E2DB51E75003DF711 /* billMindUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = billMindUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7AF8797E2E10E0FA00BD9169 /* modelData.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = modelData.csv; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -254,6 +256,7 @@
 		7A4A583A2DB51E74003DF711 = {
 			isa = PBXGroup;
 			children = (
+				7AF8797E2E10E0FA00BD9169 /* modelData.csv */,
 				7A4A58452DB51E74003DF711 /* billMind */,
 				7A4A58572DB51E75003DF711 /* billMindTests */,
 				7A4A58612DB51E75003DF711 /* billMindUITests */,
@@ -635,6 +638,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7AF8797F2E10E10200BD9169 /* modelData.csv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

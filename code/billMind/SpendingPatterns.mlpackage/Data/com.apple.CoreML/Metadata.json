@@ -1,0 +1,12 @@
+{
+  "MLModelCreatorDefinedKey" : {
+    "com.apple.coreml.model.preview.type" : "tabularRegressor",
+    "com.apple.createml.training.started" : "2025-06-29T02:54:23Z",
+    "com.apple.createml.version" : "15.5.0",
+    "com.apple.createml.training.finished" : "2025-06-29T02:54:23Z",
+    "com.apple.createml.app.tag" : "151.2",
+    "com.apple.createml.model.created" : "2025-06-29T02:54:23Z",
+    "com.apple.createml.app.version" : "6.2"
+  },
+  "MLModelAuthorKey" : "Pasindu Dinal"
+}

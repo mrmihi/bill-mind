@@ -261,24 +261,15 @@ struct AnalyticsView: View {
         }.sorted { $0.amount > $1.amount }
     }
     
-    // MARK: - Prediction Properties
+    // MARK: - Prediction Properties (powered by Core ML)
     
-    private var predictedNextMonthSpending: Double {
-        // Simple prediction based on historical average
-        let monthlyAverages = calculateMonthlyAverages()
-        return monthlyAverages.isEmpty ? totalSpent : monthlyAverages.last ?? totalSpent
+    private var predictions: AnalyticsPredictor.Output {
+        AnalyticsPredictor.predict(bills: bills, transactions: transactions)
     }
     
-    private var overdueRiskPercentage: Double {
-        let overdueBills = filteredBills.filter { $0.isOverdue }
-        return filteredBills.isEmpty ? 0 : (Double(overdueBills.count) / Double(filteredBills.count)) * 100
-    }
-    
-    private var savingsPotential: Double {
-        // Calculate potential savings based on category analysis
-        let highSpendingCategories = categoryData.filter { $0.amount > averageBillAmount * 2 }
-        return highSpendingCategories.reduce(0) { $0 + ($1.amount * 0.1) } // 10% potential savings
-    }
+    private var predictedNextMonthSpending: Double { predictions.nextMonthSpending }
+    private var overdueRiskPercentage: Double { predictions.overdueRisk * 100 }
+    private var savingsPotential: Double { predictions.savingsPotential }
     
     // MARK: - Helper Methods
     

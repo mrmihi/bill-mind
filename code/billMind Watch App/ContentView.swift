@@ -9,7 +9,6 @@ import SwiftUI
 import SwiftData
 
 struct NextBillView: View {
-    // Soonest unpaid bill
     @Query(
         filter: #Predicate<Bill> { !$0.isPaid },
         sort: \Bill.date

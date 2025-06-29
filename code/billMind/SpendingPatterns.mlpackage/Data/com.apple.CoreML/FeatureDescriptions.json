@@ -1,0 +1,42 @@
+{
+  "Inputs" : {
+    "category_entertainment_spent" : {
+      "MLFeatureShortDescription" : ""
+    },
+    "category_transportation_spent" : {
+      "MLFeatureShortDescription" : ""
+    },
+    "totalSpent" : {
+      "MLFeatureShortDescription" : ""
+    },
+    "overdueCount" : {
+      "MLFeatureShortDescription" : ""
+    },
+    "month" : {
+      "MLFeatureShortDescription" : ""
+    },
+    "payDayImpact" : {
+      "MLFeatureShortDescription" : ""
+    },
+    "category_utilities_spent" : {
+      "MLFeatureShortDescription" : ""
+    },
+    "averageBill" : {
+      "MLFeatureShortDescription" : ""
+    },
+    "category_groceries_spent" : {
+      "MLFeatureShortDescription" : ""
+    }
+  },
+  "Outputs" : {
+    "overdueRisk" : {
+      "MLFeatureShortDescription" : ""
+    }
+  },
+  "TrainingInputs" : {
+
+  },
+  "States" : {
+
+  }
+}
