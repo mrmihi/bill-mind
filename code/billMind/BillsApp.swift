@@ -40,7 +40,6 @@ struct BillsApp: App {
         }
         .menuBarExtraStyle(.window)
         
-        // Extra windows for macOS multi-window support
         WindowGroup("Add Bill", id: "addBill") {
             AddBillView()
         }
@@ -55,12 +54,10 @@ struct BillsApp: App {
 }
 
 #if os(macOS)
-// macOS-specific global command definitions
 struct BillMindCommands: Commands {
     @Environment(\.openWindow) private var openWindow
 
     var body: some Commands {
-        // Replace default File > New menu
         CommandGroup(replacing: .newItem) {
             Button("New Bill") { openWindow(id: "addBill") }
                 .keyboardShortcut("n")
@@ -77,7 +74,6 @@ struct BillMindCommands: Commands {
     }
 }
 
-// Content used inside the menu-bar extra
 private struct MenuBarContent: View {
     @Environment(\.openWindow) private var openWindow
     var body: some View {

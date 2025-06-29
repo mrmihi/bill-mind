@@ -29,7 +29,6 @@ struct AnalyticsView: View {
         NavigationStack {
             ScrollView {
                 VStack(spacing: 24) {
-                    // Timeframe and Category Filters
                     HStack {
                         Picker("Timeframe", selection: $selectedTimeframe) {
                             ForEach(Timeframe.allCases, id: \.self) { timeframe in
@@ -464,7 +463,6 @@ struct PredictionsDetailView: View {
                         .font(.title2.bold())
                         .padding(.top)
                     
-                    // Add detailed prediction content here
                     Text("Advanced machine learning predictions based on your spending patterns and historical data.")
                         .font(.body)
                         .foregroundStyle(.secondary)

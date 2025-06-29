@@ -18,8 +18,8 @@
 
 #### 04. Functionality of the Screens
 1. **Home (Overview)**
-    - Shows “Unpaid total” card with formatted sum.
-    - “By category” bar chart of unpaid bills.
+    - Shows "Unpaid total" card with formatted sum.
+    - "By category" bar chart of unpaid bills.
     - Overdue banner if any bills are past due.  
       ![Home Dashboard](Resources/Dashboard.png)
 2. **Bills List**
@@ -31,11 +31,11 @@
     - Form fields for name, amount, date & time.
     - Pickers for category, payment mode, and repeat frequency.
     - Optional receipt photo picker.
-    - “Save” inserts into SwiftData and schedules a notification.  
+    - "Save" inserts into SwiftData and schedules a notification.  
       ![Add Bill](Resources/AddBill.png)
 4. **Bill Details**
     - Summary of all bill fields, status & next occurrence for recurring.
-    - “Mark Paid/Unpay” button toggles payment, cancels or reschedules notifications, and if recurring spawns the next instance.
+    - "Mark Paid/Unpay" button toggles payment, cancels or reschedules notifications, and if recurring spawns the next instance.
     - Add receipt photo here if missing.  
       ![Bill Details](Resources/BillDetails.png)
 
@@ -57,7 +57,7 @@ struct BillRowView: View {
             VStack(alignment: .leading) {
                 Text(bill.name)
                     .font(.headline)
-                Text("LKR \(String(format: \"%.2f\", bill.amount)) · \(bill.date, formatter: dateFormatter)")
+                Text("LKR \(String(format: "%.2f", bill.amount)) · \(bill.date, formatter: dateFormatter)")
                     .font(.subheadline)
                     .foregroundStyle(.secondary)
             }
@@ -100,13 +100,13 @@ struct BillRowView: View {
 
 - Smoke‐test app launch to Home dashboard.
 
-- “Add → Save → List” flow: enters name & amount, taps Save, verifies in Bills list.
+- "Add → Save → List" flow: enters name & amount, taps Save, verifies in Bills list.
 
 ##### 08. Documentation
 
 1. Design Choices
 
-- Chose SwiftData over Core Data for zero‐boilerplate persistence.
+- Chose SwiftData over Core Data for zero‑boilerplate persistence.
 
 - SwiftUI for declarative UI, easy state‐driven updates.
 
@@ -122,7 +122,7 @@ struct BillRowView: View {
 
 - Debugging SwiftData key‑path crashes when adding a non‑optional property.
 
-- Resolving “initializer inaccessible” errors due to property wrappers.
+- Resolving "initializer inaccessible" errors due to property wrappers.
 
 - Getting the Charts API to infer the correct ID for tuple data.
 
@@ -130,6 +130,38 @@ struct BillRowView: View {
 
 - Major hurdles were SwiftData migrations and view initializer quirks—solved with optionals & explicit init().
 
-- Next time, I’d start with the data model and tests first, then scaffold each screen file to avoid large refactors.
+- Next time, I'd start with the data model and tests first, then scaffold each screen file to avoid large refactors.
 
 - Learned the importance of small, iterative commits and in‑memory testing to catch persistence issues early.
+
+#### 10. macOS (Mac Catalyst) Experience
+
+billMind also ships as a Mac Catalyst build so you can manage your bills right from your Mac.
+
+- **Same SwiftData store**, synchronized via iCloud, so your data is instantly available across iPhone, iPad and Mac.
+- **Multi-window & resizable UI**: open multiple bill detail windows, use split-screen or Stage Manager.
+- **Drag-&-drop receipt OCR**: the `ReceiptScannerView` accepts images or PDFs dropped onto the window, runs Vision text recognition, then lets you create a bill from the extracted values.
+- **Keyboard shortcuts & menus**: ⌘N to add a new bill, ⌘F to search, standard Edit menu for undo/redo.
+- **Native sidebar & toolbar** with Mac style icons and a collapsible sidebar for navigation.
+- Tested via the `ReceiptScannerMacTests` compile-time suite to ensure all Mac-only views build and instantiate correctly.
+
+  ![macOS Analytics](Resources/macos/Analytics.png)
+  ![macOS Predictions](Resources/macos/predictions.png)
+
+> Note: Real-time camera scanning (iOS) is replaced with drag-and-drop on macOS because Macs do not ship with a rear document camera.
+
+#### 11. watchOS Companion App
+
+A lightweight watchOS app brings the most common bill actions to your wrist.
+
+- **Glanceable Bills list**: shows upcoming bills with name, due date and amount.
+- **Quick Add**: `AddBillViewWatch` lets you jot down a name, amount and due date in just three fields and save with one tap.
+- **Mark Paid/Unpaid**: from `BillDetailWatchView` you can toggle payment status while in line at the checkout.
+- **Notifications tap-through**: tapping a due notification on Apple Watch opens the corresponding bill in the Watch app.
+- Built entirely with SwiftUI for watchOS using `NavigationStack`, `List`, `Form` and the new 45-point button sizes.
+- Uses **@Model** & **@Query** on the shared SwiftData container via App Groups, so changes propagate back to the phone instantly.
+
+  ![watchOS Add Bill](Resources/watchos/addBillView.png)
+  ![watchOS Bill](Resources/watchos/billView.png)
+
+These two additional targets round out billMind's multi-device story—track expenses on iPhone, scan receipts on Mac and stay on top of due dates from your wrist.

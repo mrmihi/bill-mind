@@ -95,7 +95,7 @@ final class Bill: Identifiable {
     var customFrequencyDays: Int?
     var lastModified: Date = Date()
     var cloudKitRecordID: String?
-    var receiptAnnotations: Data? // PencilKit data
+    var receiptAnnotations: Data?
     
     var category: Category { categoryRaw }
     var paymentMode: PaymentMode { paymentModeRaw }
